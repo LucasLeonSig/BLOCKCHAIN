@@ -37,8 +37,9 @@ contract Election {
 
     function castVote(uint regionId, uint partidoId) external validId(regionId) {
         require(votantes[msg.sender] == false, "Ya ha votado");
-        votantes[msg.sender] = true;
         mapa[regionId].castVote(partidoId);
+        votantes[msg.sender] = true;
+
     }
 
     function getResults() external view  returns (uint[] memory) {

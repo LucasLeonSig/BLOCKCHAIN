@@ -116,11 +116,11 @@
 			]
 		},
 		"practica_2/Election.sol": {
-			"keccak256": "0xfdfe08490fa993132b81ddb62371909f45185749832e381624445c3e00a7e53c",
+			"keccak256": "0x6ee14ce2d2528085deb5ecdfe7b1ea26c231762458f91b206a9b602492455c6c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://289062cab30ddfc7bc084077a6d8edf61d06accb348d722f0372bb2dd7d80870",
-				"dweb:/ipfs/QmQNgeYQgpvo3LpSQt5cKgWJa4dskAyeJV8N9n86kpcpNT"
+				"bzz-raw://d96ba99dec1b734a359887e7202de4d05fd58c2fb9c9e8e4b803724ec351fd5d",
+				"dweb:/ipfs/QmWhsvjPBjofYLHK9aMzM7irxdVjH8hNYHcoJrgrYXRLc2"
 			]
 		},
 		"practica_2/PollingStation.sol": {
