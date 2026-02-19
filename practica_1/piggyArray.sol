@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
-
-
 contract PiggyArray{
 
     struct Cliente{
@@ -49,8 +47,4 @@ function Withdraw(uint amountInWei)external {
         (bool success, ) = payable(msg.sender).call{value: amountInWei}("");
         require(success, "Error en la transaccion");
 }
-
-    
-
-
 }

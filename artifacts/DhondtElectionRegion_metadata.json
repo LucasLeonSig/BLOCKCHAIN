@@ -6,43 +6,20 @@
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "message",
-						"type": "string"
-					}
-				],
-				"name": "Print",
-				"type": "event"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "n",
 						"type": "uint256"
-					}
-				],
-				"name": "factorial",
-				"outputs": [
+					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "rId",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "hello_world",
-				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
+				"type": "constructor"
 			}
 		],
 		"devdoc": {
@@ -58,7 +35,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"hello.sol": "hello"
+			"practica_2/DhondtElectionRegion.sol": "DhondtElectionRegion"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -72,12 +49,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"hello.sol": {
-			"keccak256": "0x37f7930ad3cd89e3c0cf2f30aadd907b363c8f28fb3dc6775326abdac9fd9c24",
+		"practica_2/DhondtElectionRegion.sol": {
+			"keccak256": "0xcf84c67b311b1926be54a0140f81f26319e269d066fe162f210efa52bc501ae2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6313871bb8b1fe4a3cb43e778fcb4ce18b1575b9b2425c3cdd404976d43405ee",
-				"dweb:/ipfs/QmdM76Z4G2EjXKaiDUjy9GNbzokrvfs52YHFnsXW2nADtq"
+				"bzz-raw://e0a83d5afdb2a2e10435c8dd2b4be3fda7abb496e9860177b32a3f59430ddcd7",
+				"dweb:/ipfs/QmcAzzD4n8um2PVMZERdKihFj2R1TbaY9t6TzjkHMwfhGq"
 			]
 		}
 	},

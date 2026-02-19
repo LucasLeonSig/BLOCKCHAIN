@@ -1,0 +1,168 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "presidente",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "num_partidos",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "idRegion",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "idPartido",
+						"type": "uint256"
+					}
+				],
+				"name": "castVote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "closeVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getResults",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "openVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "presidente",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "partido",
+						"type": "uint256"
+					}
+				],
+				"name": "registerVote",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "votingFinished",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practica_2/DhondtPollingStation.sol": "DhondtElectionStation"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practica_2/DhondtElectionRegion.sol": {
+			"keccak256": "0x099eded9a5286ca28770a0f2e82936a00164672727a3afae8734c097a681defe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3a6384767ba87dc00b704d66cb1f07b7a0df067abb0c3840d56b57871c3b21fa",
+				"dweb:/ipfs/QmQn1vv4xYaSY6ywELMXN95p5Ji39385awKAzBBmWS5RXn"
+			]
+		},
+		"practica_2/DhondtPollingStation.sol": {
+			"keccak256": "0x1e0ac731081d0334e65ef2c0f345c909c7b719648c987eea9fbb1f164f4718f0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a3845af08e88a3484cb89bee890493a9be3ccd53576635700c3b1563b2649408",
+				"dweb:/ipfs/QmcowU7y4saaegw9BEkgm8JPgMsAeoHj7nRnKxX9cvR96R"
+			]
+		},
+		"practica_2/PollingStation.sol": {
+			"keccak256": "0x439ad6850a8a112a1a19bff28eaa36f546e7a398e0764a7b70e636b551a826f6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cf4bd6a6b897287a325b720188c242c65d5e618b54d97c187dc3fe7e21062b8",
+				"dweb:/ipfs/QmdSJYTVAvnzEr1caHaJetDNWs59PaFF8vx2spfnCMwQ75"
+			]
+		}
+	},
+	"version": 1
+}

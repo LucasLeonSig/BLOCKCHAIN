@@ -1,0 +1,136 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "n",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "regionId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "partidoId",
+						"type": "uint256"
+					}
+				],
+				"name": "castVote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "regionId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "presidente",
+						"type": "address"
+					}
+				],
+				"name": "createPollingStation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getResults",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practica_2/Election.sol": "Election"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practica_2/DhondtElectionRegion.sol": {
+			"keccak256": "0xcf84c67b311b1926be54a0140f81f26319e269d066fe162f210efa52bc501ae2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0a83d5afdb2a2e10435c8dd2b4be3fda7abb496e9860177b32a3f59430ddcd7",
+				"dweb:/ipfs/QmcAzzD4n8um2PVMZERdKihFj2R1TbaY9t6TzjkHMwfhGq"
+			]
+		},
+		"practica_2/DhondtPollingStation.sol": {
+			"keccak256": "0x5cb41706267d41e1a1dd89f93d45e7f06d2d04bdbcfbb2ce5e5b1ecb60090d62",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://37c1d8703be9d02dcd32924325e8656f215de5faad4e6036b0f87a75dfa36cfe",
+				"dweb:/ipfs/QmcUSjVthtDWSpFCRXxA54Zc4Hp27fF5arWLHnk9G5A8cm"
+			]
+		},
+		"practica_2/Election.sol": {
+			"keccak256": "0xfdfe08490fa993132b81ddb62371909f45185749832e381624445c3e00a7e53c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://289062cab30ddfc7bc084077a6d8edf61d06accb348d722f0372bb2dd7d80870",
+				"dweb:/ipfs/QmQNgeYQgpvo3LpSQt5cKgWJa4dskAyeJV8N9n86kpcpNT"
+			]
+		},
+		"practica_2/PollingStation.sol": {
+			"keccak256": "0x959bcc452d589b4b5e1cbc111207008b851fa389872185f9ed7e3b5299d1375c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e86360bfe40caa3f085d258d7f30469b07b70b55ecee2bd2106fcc8a02990943",
+				"dweb:/ipfs/QmWr1EYvX5fR47yxkrnqBcRK6U7PKNFNXHL8xmeVYDQmpW"
+			]
+		}
+	},
+	"version": 1
+}
