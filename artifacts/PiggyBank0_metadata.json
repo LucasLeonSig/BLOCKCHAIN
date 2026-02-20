@@ -52,7 +52,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"piggyBank0.sol": "PiggyBank0"
+			"practica_1/piggyBank0.sol": "PiggyBank0"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -66,7 +66,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"piggyBank0.sol": {
+		"practica_1/piggyBank0.sol": {
 			"keccak256": "0x90ad94338888aff01b537d3e72b165aeeea53a5a3f4a66f1a56607106d282628",
 			"license": "MIT",
 			"urls": [

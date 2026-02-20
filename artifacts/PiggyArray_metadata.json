@@ -94,7 +94,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"piggyArray.sol": "PiggyArray"
+			"practica_1/piggyArray.sol": "PiggyArray"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -108,12 +108,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"piggyArray.sol": {
-			"keccak256": "0x338752d4ed73af621567366ef3d318aa82013ba4ec343c15ea2cc543b408056e",
+		"practica_1/piggyArray.sol": {
+			"keccak256": "0x6cd04b8a35c27b28981a8648dfd5647053690b2e427af43750c1ab4d65ceb4af",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://15d77cf13510d163383c12ae64be8b818befe354eda5cb6468008f0100aee78f",
-				"dweb:/ipfs/QmcfinHoxPonRJbK8icBWwSw8N4e4M5knfE7hBBi8q3Fcr"
+				"bzz-raw://6405c79eb12f02443675c2380ca8489bb2402428454f2b10cd79272279a249fd",
+				"dweb:/ipfs/QmSAL2AJrWWi4qXqMr6zeDHRNmPusck8X4igUdqpNvuetV"
 			]
 		}
 	},

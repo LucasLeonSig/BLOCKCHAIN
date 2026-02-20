@@ -28,10 +28,11 @@ contract piggyMapping2 {
     }
 
     function getBalance() external view returns (uint) {
+        require(bytes(mapa[msg.sender].name).length != 0, "Not exists"); // falta esto
         return mapa[msg.sender].cantidad;
     }
 
-    function Withdraw(uint amountInWei) external {
+    function withdraw(uint amountInWei) external {
         Cliente storage c = mapa[msg.sender];
         
         require(bytes(c.name).length != 0, "Not exists"); 

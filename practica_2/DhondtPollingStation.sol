@@ -10,7 +10,6 @@ contract DhondtPollingStation is DhondtElectionRegion, PollingStation {
     function castVote(uint partidoId)  external override votoValido{
         bool valido = registerVote(partidoId);
         require(valido, "Partido invalido");
-        registerVote(partidoId);
     }
 
     function getResults() external override view returns(uint[] memory){

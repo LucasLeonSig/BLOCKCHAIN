@@ -8,19 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "amountInWei",
-						"type": "uint256"
-					}
-				],
-				"name": "Withdraw",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
@@ -50,6 +37,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountInWei",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -65,7 +65,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"piggyMapping.sol": "piggyMapping"
+			"practica_1/piggyMapping.sol": "piggyMapping"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -79,12 +79,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"piggyMapping.sol": {
-			"keccak256": "0x5cdfdbbfdcfb57018c9bc42e01281f8f6b07e22d12991e9ead4996bed263068e",
+		"practica_1/piggyMapping.sol": {
+			"keccak256": "0x11694fa48e47d49f0985b5256e909c34b217e2e129797767fa50c1872b7f6df9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6b27f7041d8638f9df6bba885410b39b4c12990fb18608722d7cfbabae5a7e36",
-				"dweb:/ipfs/QmTYVNycvTHPXgk85qZyv7X19exDa9whTd1PGnKXXNTyUm"
+				"bzz-raw://2afdb9b815465b2d39227c377698e7d088d02a2e8f9ec6037ab8039c59fb19de",
+				"dweb:/ipfs/QmR4AUGx5LwQgJ4Uc2CdhE2ERFZEchkhNcXL1bNCgqfjUc"
 			]
 		}
 	},

@@ -10,16 +10,16 @@ contract PiggyArray{
     Cliente[] public array;
 
 function clientIndex(address _address)internal view returns (uint){
-
-        for( uint i = 0; i < array.length; i++){
+        uint i = 0;
+        for(i; i < array.length; i++){
             if(array[i].addr == _address) return i;
         }
-        return array.length;
+        return i;
 }
 
 function addClient(string memory name) external payable {
     uint ind = clientIndex(msg.sender);
-    require(ind == array.length,"Already exits");
+    require(ind == array.length,"Already exists");
     require( bytes(name).length != 0, "empty name");
     array.push(Cliente({
     name: name,

@@ -116,11 +116,11 @@
 			]
 		},
 		"practica_2/DhondtPollingStation.sol": {
-			"keccak256": "0x5cb41706267d41e1a1dd89f93d45e7f06d2d04bdbcfbb2ce5e5b1ecb60090d62",
+			"keccak256": "0x7c99f99023736eda8c8586c4c2f65310656cff9c5a21a388f459ca2fc7d6f3ef",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://37c1d8703be9d02dcd32924325e8656f215de5faad4e6036b0f87a75dfa36cfe",
-				"dweb:/ipfs/QmcUSjVthtDWSpFCRXxA54Zc4Hp27fF5arWLHnk9G5A8cm"
+				"bzz-raw://31cf6fe1e8cd6cf8726efd94a6b69eda3c72aaacea6dcca2cbf0837396842cb7",
+				"dweb:/ipfs/Qmd988ZH5j7fqZYkpT9quHNnMSfXx351F85s7bWUQZMVKf"
 			]
 		},
 		"practica_2/PollingStation.sol": {
