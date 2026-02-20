@@ -42,7 +42,7 @@ contract Election {
 
     }
 
-    function getResults() external view  returns (uint[] memory) {
+    function getResults() external view onlyAuthority returns (uint[] memory) {
         uint[] memory totales = new uint[](numPartidos);
         for (uint i = 0; i < regiones.length; i++) {
             uint idRegion = regiones[i];
