@@ -1,0 +1,122 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "token_id_p",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "nombre_arma",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fire_power",
+						"type": "uint256"
+					}
+				],
+				"name": "addWeapon",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					}
+				],
+				"name": "createNewToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "token_id_u",
+						"type": "uint256"
+					}
+				],
+				"name": "removeMonsterToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practica_3/MonsterTokens.sol": "MonsterTokens"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practica_3/ArrayUtils.sol": {
+			"keccak256": "0x34993f45adf8159ca270b4297de19289dfe11aec601464dd36ce6b55776eaf4b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bb77591d2d91be9642b68adfd177259fe04051284e0365e18b09eba3ef970a97",
+				"dweb:/ipfs/QmXAC5gfenJHxGYSUuUgzbCCV3oFNiZERU1v6TTJE1rcnq"
+			]
+		},
+		"practica_3/MonsterTokens.sol": {
+			"keccak256": "0xb0060c5f976957679cef855f2dc92d4e52507eaabf8804778606098530d19507",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6806537d95a554a650a59e524469364aefba5d081a7debe36566d446fbb361a",
+				"dweb:/ipfs/QmfTz7QwELaELcJH2SqoMy8QUUWe8uP27Lh5vY2ujKQiFv"
+			]
+		}
+	},
+	"version": 1
+}

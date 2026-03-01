@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practica_3/ArrayUtils.sol": "ArrayUtils"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practica_3/ArrayUtils.sol": {
+			"keccak256": "0x34993f45adf8159ca270b4297de19289dfe11aec601464dd36ce6b55776eaf4b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bb77591d2d91be9642b68adfd177259fe04051284e0365e18b09eba3ef970a97",
+				"dweb:/ipfs/QmXAC5gfenJHxGYSUuUgzbCCV3oFNiZERU1v6TTJE1rcnq"
+			]
+		}
+	},
+	"version": 1
+}
