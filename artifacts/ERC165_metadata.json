@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceID",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"practica_3/ERC721simplified.sol": "ERC165"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"practica_3/ERC721simplified.sol": {
+			"keccak256": "0x3fe66e446dc64091c00cb0cd79e3041b9c7ad43e4645d0da89c005a1a6f4380a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://579470c2a74c21569e954c04bf152520834435ac3a2a451c2e371324cb70fa98",
+				"dweb:/ipfs/QmbeUKBcmTD2NAZWtqkB1SxKv48wLoAf71iWAT36sMKCCq"
+			]
+		}
+	},
+	"version": 1
+}

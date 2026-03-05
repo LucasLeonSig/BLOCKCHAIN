@@ -6,11 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -61,51 +56,15 @@
 				"type": "event"
 			},
 			{
-				"inputs": [],
-				"name": "FEE",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "token_id_p",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "nombre_arma",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "fire_power",
-						"type": "uint256"
-					}
-				],
-				"name": "addWeapon",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "approved",
+						"name": "_approved",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "_tokenId",
 						"type": "uint256"
 					}
 				],
@@ -118,7 +77,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "owner",
+						"name": "_owner",
 						"type": "address"
 					}
 				],
@@ -134,36 +93,10 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "collectProfits",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "nombre",
-						"type": "string"
-					}
-				],
-				"name": "createNewToken",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "_tokenId",
 						"type": "uint256"
 					}
 				],
@@ -182,25 +115,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "token_id_p",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "incr",
-						"type": "uint8"
-					}
-				],
-				"name": "incrementFirePower",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "_tokenId",
 						"type": "uint256"
 					}
 				],
@@ -218,31 +133,18 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "token_id_u",
-						"type": "uint256"
-					}
-				],
-				"name": "removeMonsterToken",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "address",
-						"name": "from",
+						"name": "_from",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "_to",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "_tokenId",
 						"type": "uint256"
 					}
 				],
@@ -255,7 +157,7 @@
 				"inputs": [
 					{
 						"internalType": "bytes4",
-						"name": "interfaceId",
+						"name": "interfaceID",
 						"type": "bytes4"
 					}
 				],
@@ -267,24 +169,24 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
+						"name": "_from",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "_to",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "_tokenId",
 						"type": "uint256"
 					}
 				],
@@ -292,10 +194,6 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -311,7 +209,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"practica_3/MonsterTokens.sol": "MonsterTokens"
+			"practica_3/ERC721simplified.sol": "ERC721simplified"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -325,28 +223,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"practica_3/ArrayUtils.sol": {
-			"keccak256": "0x03792297787ef3ff08abb38942aac751b23aa56c84e1e10e791d0dccf0e185c1",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://eded467153087d9d197e357f54c2e1238957c8793a3001bcff1224aa4eda153d",
-				"dweb:/ipfs/QmXkDKV4MKcAKy51TCzoSdZAq4cbD5jbmDv81PWsvupMUA"
-			]
-		},
 		"practica_3/ERC721simplified.sol": {
 			"keccak256": "0x3fe66e446dc64091c00cb0cd79e3041b9c7ad43e4645d0da89c005a1a6f4380a",
 			"license": "GPL-3.0",
 			"urls": [
 				"bzz-raw://579470c2a74c21569e954c04bf152520834435ac3a2a451c2e371324cb70fa98",
 				"dweb:/ipfs/QmbeUKBcmTD2NAZWtqkB1SxKv48wLoAf71iWAT36sMKCCq"
-			]
-		},
-		"practica_3/MonsterTokens.sol": {
-			"keccak256": "0xe74cf483803cd6d301100ee60d84d404b197d6f492998f834b8affdd62f14e36",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://2f2e9eaad62f991075479ef8add6c1615c92a902bbd4ccabfb2d1673fcaa9757",
-				"dweb:/ipfs/QmdAuSWgwJ5pZZEP49KHyucHHwdEbJJBtee7HMnQtUqX35"
 			]
 		}
 	},
