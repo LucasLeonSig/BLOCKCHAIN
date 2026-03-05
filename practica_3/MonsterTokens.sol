@@ -42,7 +42,7 @@ contract MonsterTokens is ERC721simplified {
         contract_owner = msg.sender;
     }
 
-    function createNewToken(string calldata nombre) external payable returns (uint) {
+    function createMonsterToken(string calldata nombre) external payable returns (uint) {
         require(msg.value >= FEE, "Insufficient funds");
 
         registry[msg.sender] += 1;
@@ -54,7 +54,7 @@ contract MonsterTokens is ERC721simplified {
         return token_id_actual - 1;
     }
 
-    function removeMonsterToken(uint token_id_u) external payable {
+    function removeMonsterToken(uint token_id_u) external  {
         require(
             owners[token_id_u] != address(0) && owners[token_id_u] == msg.sender,
             "Unauthorized access"
@@ -110,7 +110,7 @@ contract MonsterTokens is ERC721simplified {
 
     function approve(address approved, uint256 tokenId) external payable override {
         require(owners[tokenId] == msg.sender, "Unauthorized access");
-        require(approved != address(0) || approvals[tokenId] != address(0), "Nothing to approve");
+        require(approved != address(0) || approvals[tokenId] != address(0), "Imposible to approve"); //pongo la condición de que si ya está aprovado revoque como algo extra.
 
         require(
             msg.value >= tokens[tokenId].weapons.firePowers.sum(),
