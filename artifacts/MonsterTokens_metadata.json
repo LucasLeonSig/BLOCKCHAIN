@@ -179,6 +179,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getInterfaceIds",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "erc165Id",
+						"type": "bytes4"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "erc721Id",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -342,11 +360,11 @@
 			]
 		},
 		"practica_3/MonsterTokens.sol": {
-			"keccak256": "0xe74cf483803cd6d301100ee60d84d404b197d6f492998f834b8affdd62f14e36",
+			"keccak256": "0xb812e31a70afbbdb571c8e3f669cfe5b7c674b516397075f2f160665e160b752",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2f2e9eaad62f991075479ef8add6c1615c92a902bbd4ccabfb2d1673fcaa9757",
-				"dweb:/ipfs/QmdAuSWgwJ5pZZEP49KHyucHHwdEbJJBtee7HMnQtUqX35"
+				"bzz-raw://85f7c7e274c217d2b8a5c3b249da1cb5e75b73ac1363332e43f24fd29b26cac8",
+				"dweb:/ipfs/QmXVZBQCJiPWh3kMJxcNPKxoxNLqUZc6neRxQxGXKgbG7L"
 			]
 		}
 	},

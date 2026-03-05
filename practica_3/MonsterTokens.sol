@@ -199,5 +199,10 @@ contract MonsterTokens is ERC721simplified {
     
 }
 
+    function getInterfaceIds() external pure returns (bytes4 erc165Id, bytes4 erc721Id) {
+        erc165Id = type(ERC165).interfaceId;
+        erc721Id = type(ERC721simplified).interfaceId;
+    }
+
     receive() external payable {}
 }
