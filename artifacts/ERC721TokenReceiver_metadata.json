@@ -53,7 +53,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"practica_3/MonsterTokens.sol": "ERC721TokenReceiver"
+			"ERC721TokenReceiver.sol": "ERC721TokenReceiver"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -67,28 +67,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"practica_3/ArrayUtils.sol": {
-			"keccak256": "0x03792297787ef3ff08abb38942aac751b23aa56c84e1e10e791d0dccf0e185c1",
+		"ERC721TokenReceiver.sol": {
+			"keccak256": "0xd60c348d11b3d29c7f4ebefa763e91535ccfb2d3b536396fcd1ddced642e503a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://eded467153087d9d197e357f54c2e1238957c8793a3001bcff1224aa4eda153d",
-				"dweb:/ipfs/QmXkDKV4MKcAKy51TCzoSdZAq4cbD5jbmDv81PWsvupMUA"
-			]
-		},
-		"practica_3/ERC721simplified.sol": {
-			"keccak256": "0x3fe66e446dc64091c00cb0cd79e3041b9c7ad43e4645d0da89c005a1a6f4380a",
-			"license": "GPL-3.0",
-			"urls": [
-				"bzz-raw://579470c2a74c21569e954c04bf152520834435ac3a2a451c2e371324cb70fa98",
-				"dweb:/ipfs/QmbeUKBcmTD2NAZWtqkB1SxKv48wLoAf71iWAT36sMKCCq"
-			]
-		},
-		"practica_3/MonsterTokens.sol": {
-			"keccak256": "0xb812e31a70afbbdb571c8e3f669cfe5b7c674b516397075f2f160665e160b752",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://85f7c7e274c217d2b8a5c3b249da1cb5e75b73ac1363332e43f24fd29b26cac8",
-				"dweb:/ipfs/QmXVZBQCJiPWh3kMJxcNPKxoxNLqUZc6neRxQxGXKgbG7L"
+				"bzz-raw://11fd00d754f414839153859518c249b9e6cb8301d7e843ae282df3d56e8c60e9",
+				"dweb:/ipfs/Qmd4woaRmKhzk5aJyoqzF7o1TZXULW1f3DMSXTbdC9N7u8"
 			]
 		}
 	},

@@ -148,7 +148,7 @@
 						"type": "string"
 					}
 				],
-				"name": "createNewToken",
+				"name": "createMonsterToken",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -243,7 +243,7 @@
 				],
 				"name": "removeMonsterToken",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -343,6 +343,14 @@
 		"remappings": []
 	},
 	"sources": {
+		"ERC721TokenReceiver.sol": {
+			"keccak256": "0xd60c348d11b3d29c7f4ebefa763e91535ccfb2d3b536396fcd1ddced642e503a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://11fd00d754f414839153859518c249b9e6cb8301d7e843ae282df3d56e8c60e9",
+				"dweb:/ipfs/Qmd4woaRmKhzk5aJyoqzF7o1TZXULW1f3DMSXTbdC9N7u8"
+			]
+		},
 		"practica_3/ArrayUtils.sol": {
 			"keccak256": "0x03792297787ef3ff08abb38942aac751b23aa56c84e1e10e791d0dccf0e185c1",
 			"license": "MIT",
@@ -360,11 +368,11 @@
 			]
 		},
 		"practica_3/MonsterTokens.sol": {
-			"keccak256": "0xb812e31a70afbbdb571c8e3f669cfe5b7c674b516397075f2f160665e160b752",
+			"keccak256": "0xfafe6d819ee21f192cd11b69dbd38a88185522b1575000a4b776fc79b3e9101b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://85f7c7e274c217d2b8a5c3b249da1cb5e75b73ac1363332e43f24fd29b26cac8",
-				"dweb:/ipfs/QmXVZBQCJiPWh3kMJxcNPKxoxNLqUZc6neRxQxGXKgbG7L"
+				"bzz-raw://cdbc0245206b0c7e8214af6057196707fc6bf0d3ef614e399701c635da5ae45c",
+				"dweb:/ipfs/QmZRatk32FhcwnhtoFicE28ZPUCpwyFKEyprdc2ibZDmrb"
 			]
 		}
 	},

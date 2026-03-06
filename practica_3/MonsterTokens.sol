@@ -3,15 +3,7 @@ pragma solidity ^0.8.5;
 
 import "./ArrayUtils.sol";
 import "./ERC721simplified.sol";
-
-interface ERC721TokenReceiver {
-    function onERC721Received(
-        address _operator,
-        address _from,
-        uint256 _tokenId,
-        bytes calldata _data
-    ) external returns (bytes4);
-}
+import "ERC721TokenReceiver.sol";
 
 contract MonsterTokens is ERC721simplified {
     using ArrayUtils for string[];
@@ -110,15 +102,14 @@ contract MonsterTokens is ERC721simplified {
 
     function approve(address approved, uint256 tokenId) external payable override {
         require(owners[tokenId] == msg.sender, "Unauthorized access");
-        require(approved != address(0) || approvals[tokenId] != address(0), "Imposible to approve"); //pongo la condición de que si ya está aprovado revoque como algo extra.
-
         require(
             msg.value >= tokens[tokenId].weapons.firePowers.sum(),
             "Not enough funds"
         );
-
         approvals[tokenId] = approved;
         emit Approval(msg.sender, approved, tokenId);
+
+
     }
 
     function transferFrom(address from,address to, uint256 tokenId) external payable override {
