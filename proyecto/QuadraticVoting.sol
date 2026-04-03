@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
+import "./TokenVotacion.sol";
+import "@openzeppelin/contracts/utils/math/Math.sol";
+
 
 contract QuadraticVoting{
     bool public isOpen;
@@ -7,8 +10,6 @@ contract QuadraticVoting{
         require(isOpen, "La votacion tiene que estar abierta");
         _;
     }
-
-
     address private owner;
     address private contract_ERC20;
 
@@ -44,6 +45,9 @@ mapping(uint => address) private _creadorPropuestas;
         num_max_tokens = _num_max_tokens;
         isOpen =false; //Por defecto votación cerrada
         owner = msg.sender; //El dueño del contrato lo establecemos como quien lo crea.
+        TokenVotacion tv = new TokenVotacion(0);
+        contract_ERC20 = address(tv);
+
     }
 
     function openVoting() public payable {
@@ -116,6 +120,13 @@ mapping(uint => address) private _creadorPropuestas;
     function getProposalInfo(uint id) public view votacionAbierta returns  (sPropuesta memory){
         require(id < propuestas.length || propuestas[id].contrato != address(0), "Id no existente"); //Si borrase yo alguna proposal devolvería 0, error también.
         return propuestas[id]; // deduzco que habria que hacer algun tipo de comprobación
+    }
+
+    function stake(uint id, uint num_votos) public payable {
+        uint num_tokens = num_votos * num_votos;
+        require(IERC20(contract_ERC20).allowance(msg.sender,address(this)) >= num_tokens,"No se ha autorizado a transferir tantos tokens");
+        IERC20(contract_ERC20).transferFrom(msg.sender, address(this), num_tokens);
+        
     }
 
 
