@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numTokens",
+						"type": "uint256"
+					}
+				],
+				"name": "executeProposal",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"proyecto/IExecutableProposal.sol": "IExecutableProposal"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"proyecto/IExecutableProposal.sol": {
+			"keccak256": "0xd51a02dcac31c99ba8ac0c639d8512cd0ba2ef44b43ea78672a604f31f3144bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c6f1aadb72ee8c7fbf2cb12893cd741e43861e8ca933e1006dbac7e352e8880d",
+				"dweb:/ipfs/QmaUvo8oUU6oCsaJVqo9manaKVzBYr2xXbns4nZBbbWGwd"
+			]
+		}
+	},
+	"version": 1
+}
