@@ -1,0 +1,10 @@
+{
+  "@openzeppelin/contracts@5.6.1/utils/math/Math.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/math/Math.sol",
+  "@openzeppelin/contracts@5.6.1/utils/Panic.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/Panic.sol",
+  "@openzeppelin/contracts@5.6.1/utils/math/SafeCast.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/math/SafeCast.sol",
+  "@openzeppelin/contracts@5.6.1/utils/structs/EnumerableSet.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/structs/EnumerableSet.sol",
+  "@openzeppelin/contracts@5.6.1/utils/Arrays.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/Arrays.sol",
+  "@openzeppelin/contracts@5.6.1/utils/Comparators.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/Comparators.sol",
+  "@openzeppelin/contracts@5.6.1/utils/SlotDerivation.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/SlotDerivation.sol",
+  "@openzeppelin/contracts@5.6.1/utils/StorageSlot.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/StorageSlot.sol"
+}

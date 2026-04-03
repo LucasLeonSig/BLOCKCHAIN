@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "arr",
+						"type": "uint256[]"
+					}
+				],
+				"name": "completeMaxAsm",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "maxVal",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lab6/09fors.sol": "maxAsm2"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"lab6/09fors.sol": {
+			"keccak256": "0xf1a62fb803658ada8782fdeef6fa24a2296d9d96dd33c8a475fee8d09bf777eb",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9db85cab211988e5ecffbf153401749d7df2334acc5c1bd809004382b854f312",
+				"dweb:/ipfs/QmSqG6u51LVxK6v7hT4bGuTTTTjGmYx12mVE5YxvCqrhcz"
+			]
+		}
+	},
+	"version": 1
+}
