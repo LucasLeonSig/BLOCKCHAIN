@@ -125,31 +125,24 @@
 				"name": "getProposalInfo",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "titulo",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "descripcion",
-								"type": "string"
-							},
-							{
-								"internalType": "uint256",
-								"name": "presupuesto",
-								"type": "uint256"
-							},
-							{
-								"internalType": "address",
-								"name": "contrato",
-								"type": "address"
-							}
-						],
-						"internalType": "struct QuadraticVoting.sPropuesta",
-						"name": "",
-						"type": "tuple"
+						"internalType": "string",
+						"name": "titulo",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "descripcion",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "creador",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numVotos",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -209,6 +202,24 @@
 					}
 				],
 				"name": "stake",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num_votos",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawFromProposal",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -306,20 +317,28 @@
 				"dweb:/ipfs/QmdGPcvptHN7UBCbUYBbRX3hiRVRFLRwno8b4uga6uFNif"
 			]
 		},
-		"proyecto/QuadraticVoting.sol": {
-			"keccak256": "0x14ce809d68d1d0cae9c9a009b555a2fcea284a150c4d9ef4835e6da84ac06e20",
+		"proyecto/IExecutableProposal.sol": {
+			"keccak256": "0xd51a02dcac31c99ba8ac0c639d8512cd0ba2ef44b43ea78672a604f31f3144bb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4e94fca354605736ac7cb284119b4f74e6969a9f1cddb49163d9cd964d719f34",
-				"dweb:/ipfs/QmdxT39BJi13b8HT6HQ25bPayEGQJd4eibHWCPgu1Twutj"
+				"bzz-raw://c6f1aadb72ee8c7fbf2cb12893cd741e43861e8ca933e1006dbac7e352e8880d",
+				"dweb:/ipfs/QmaUvo8oUU6oCsaJVqo9manaKVzBYr2xXbns4nZBbbWGwd"
+			]
+		},
+		"proyecto/QuadraticVoting.sol": {
+			"keccak256": "0x7df1c8e260613176ba880ed0db77a15731c9c3abefc803011533ad884d416bbc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1881b83abc95ab51fd23f5cdf83238ddcdefe1a9251b0ed61aca6eaaee804124",
+				"dweb:/ipfs/QmYoAxnCarVjwJ2sGRZL925s2zooYbDadWxpB6QoDkn4oL"
 			]
 		},
 		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0x87ad497ba4fc7859602c985a76577069eb636a1009c05055f526846b298e85a2",
+			"keccak256": "0xdce59a091d4a0863886673c40d6256594d4ada07415851353f1ae9d4c3ca147f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://eaba728117fb26253c40da68c35a75a9ff840ba38ee37cef1dc2321d6742f062",
-				"dweb:/ipfs/QmZuzSRM7w3BHtyaX8iMQJjY3yZEBjoa6X5vDQQxNMAUBq"
+				"bzz-raw://a9127b49da9ea0d224367325a74cd4ae12f0f6df45278c0b8004b89b1814e69a",
+				"dweb:/ipfs/QmPWKDePh2nowVMcLFg7Tukpz262hxWHgEZ9Ehz3wqMqgh"
 			]
 		}
 	},

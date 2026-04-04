@@ -52,7 +52,7 @@ contract QuadraticVoting{
         num_max_tokens = _num_max_tokens;
         isOpen =false; //Por defecto votación cerrada
         owner = msg.sender; //El dueño del contrato lo establecemos como quien lo crea.
-        TokenVotacion tv = new TokenVotacion(0);
+        TokenVotacion tv = new TokenVotacion(0,precio_token, num_max_tokens, this(address));
         contract_ERC20 = address(tv);
 
     }
@@ -67,6 +67,7 @@ contract QuadraticVoting{
         require(msg.value >= precio_token, "Se debe comprar como minimo un token");
         uint total_tokens = msg.value / precio_token;
         participantes[msg.sender] = true;
+        //ERC20(contract_ERC20)._mint();
     }
 
 
@@ -106,8 +107,23 @@ contract QuadraticVoting{
         _indexPropuestasActivas[_idsPropuestasActivas[indice_borrar]] = indice_borrar;
         _idsPropuestasActivas.pop();
         //DEVOLVER TOKENS A PROPIETARIOS
-
     }
+
+    function buyTokens() public payable{
+        //precio tokens 0?
+        //directamente reenvío el dinero?
+        ITokenVotacionFun(contract_ERC20).add_tokens(msg.sender);
+    }
+    
+    function sellTokens(uint numTokensV) public payable{
+        //precio tokens 0?
+        //directamente reenvío el dinero?
+        IERC20(contract_ERC20).sell_tokens(msg.sender , numTokensV);  
+        //si me da error porque no tiene esos tokens?
+        //enviamos dinero
+    }
+
+
 
     function getERC20() public view returns(address){
         return contract_ERC20;
