@@ -18,9 +18,9 @@ contract ContratoAux is IExecutableProposal, ERC165 {
         emit PagoRecibido(msg.sender, msg.value);
     }   
 
-    function supportsInterface(bytes4 interfaceId) public view override returns (bool) {
+    function supportsInterface(bytes4 interfaceId) public pure override returns (bool) {
         return 
-            interfaceId == type(IExecutableProposal).interfaceId || 
-            super.supportsInterface(interfaceId);
+            interfaceId == type(IExecutableProposal).interfaceId;
     }
+
 }

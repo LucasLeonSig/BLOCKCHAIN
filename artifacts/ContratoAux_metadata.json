@@ -88,7 +88,7 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -141,11 +141,11 @@
 			]
 		},
 		"proyecto/ContratoAux.sol": {
-			"keccak256": "0x2faa4418c20bdbfa7d9cac796ec63e5252e741c570b008db4ecb598a53b3b287",
+			"keccak256": "0xa69f36d4f930d69fef81f4a10fc01ef702f4beb1dca8c4ca8639d2903c8ff777",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ab9b399b3cdbf680ee090b928ed5a81bc5990a3e661a7741a44ace70b5c9dc34",
-				"dweb:/ipfs/QmV1io2bun1grHT5XSFzA6vEcPVfJfW763cu6io8yovXyd"
+				"bzz-raw://0180e74b239ca37536898aacd56d4300319d4bf69077eb65774cad1b8298a821",
+				"dweb:/ipfs/QmfCCFFxPJ8k16YcGXJeq9WP3LEGmuJotKriRdi1DrwVkr"
 			]
 		},
 		"proyecto/IExecutableProposal.sol": {

@@ -66,6 +66,19 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "numTokensC",
+						"type": "uint256"
+					}
+				],
+				"name": "buyTokens",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
 					}
@@ -192,6 +205,19 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "numTokensV",
+						"type": "uint256"
+					}
+				],
+				"name": "sellTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
 					},
@@ -203,7 +229,7 @@
 				],
 				"name": "stake",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -301,6 +327,14 @@
 				"dweb:/ipfs/QmVSaVJf9FXFhdYEYeCEfjMVHrxDh5qL4CGkxdMWpQCrqG"
 			]
 		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://971f954442df5c2ef5b5ebf1eb245d7105d9fbacc7386ee5c796df1d45b21617",
+				"dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u"
+			]
+		},
 		"@openzeppelin/contracts/utils/math/Math.sol": {
 			"keccak256": "0x59973a93b1f983f94e10529f46ca46544a9fec2b5f56fb1390bbe9e0dc79f857",
 			"license": "MIT",
@@ -326,19 +360,19 @@
 			]
 		},
 		"proyecto/QuadraticVoting.sol": {
-			"keccak256": "0x7df1c8e260613176ba880ed0db77a15731c9c3abefc803011533ad884d416bbc",
+			"keccak256": "0x0a69f6b01e06836eabcc9143c4cc75c96cd7833f9aafc12235a6f099ff851590",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1881b83abc95ab51fd23f5cdf83238ddcdefe1a9251b0ed61aca6eaaee804124",
-				"dweb:/ipfs/QmYoAxnCarVjwJ2sGRZL925s2zooYbDadWxpB6QoDkn4oL"
+				"bzz-raw://9d7c05a581caebb9dcd84ac3869255fad0fcd5e001e114d14a58a6cbf2debc9f",
+				"dweb:/ipfs/QmQTM4b7XBL9Mv2iEda1oxYeyrDt34YTkLRtX8cUhvEuJL"
 			]
 		},
 		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0xdce59a091d4a0863886673c40d6256594d4ada07415851353f1ae9d4c3ca147f",
+			"keccak256": "0x6bc2406f60cffbf3de2166caf448b8f99b375f467e5a5638b60a30e8666e7d9e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a9127b49da9ea0d224367325a74cd4ae12f0f6df45278c0b8004b89b1814e69a",
-				"dweb:/ipfs/QmPWKDePh2nowVMcLFg7Tukpz262hxWHgEZ9Ehz3wqMqgh"
+				"bzz-raw://509e2d266e185922f01f522822c392f58eeffe23ff95f8ec492f640370b390cd",
+				"dweb:/ipfs/QmXRFziCjdCF5KrxXYdYb6JAut5oPZ1PerZrr3auadooJC"
 			]
 		}
 	},

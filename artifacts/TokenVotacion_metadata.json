@@ -173,6 +173,11 @@
 						"internalType": "address",
 						"name": "dir",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numTokensV",
+						"type": "uint256"
 					}
 				],
 				"name": "add_tokens",
@@ -305,11 +310,16 @@
 						"internalType": "address",
 						"name": "dir",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numTokensV",
+						"type": "uint256"
 					}
 				],
 				"name": "sell_tokens",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -551,11 +561,11 @@
 			]
 		},
 		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0xcb34e758322e835fa84f990b25aad39e77a23100ae6085e4d91c746f1329cd2d",
+			"keccak256": "0x6bc2406f60cffbf3de2166caf448b8f99b375f467e5a5638b60a30e8666e7d9e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8caaa5d8fbda4617555717a74332266aa8af03f6cb936750484ed455c569f2a9",
-				"dweb:/ipfs/QmW84ZGVqUDP7x9jxFQRRoLbdFtF2aPuhC1e6RjymA45up"
+				"bzz-raw://509e2d266e185922f01f522822c392f58eeffe23ff95f8ec492f640370b390cd",
+				"dweb:/ipfs/QmXRFziCjdCF5KrxXYdYb6JAut5oPZ1PerZrr3auadooJC"
 			]
 		}
 	},

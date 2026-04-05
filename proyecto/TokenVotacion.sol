@@ -6,8 +6,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 //Añadimos interfaz 
 interface ITokenVotacionFun {
-    function add_tokens(address dir) external payable;
-    function sell_tokens(address dir) external payable;
+    function add_tokens(address dir,uint numTokensV) external payable;
+    function sell_tokens(address dir, uint numTokensV) external;
 
 }
 
@@ -29,12 +29,12 @@ contract TokenVotacion is ERC20, ITokenVotacionFun {
 
 function add_tokens(address dir, uint numTokensV) external payable{
     require(msg.sender == creador, "El unico con capacidad para crear tokens es el contrato QuadraticVoting");
-    _mint(dir, msg.value/precio_token);
+    _mint(dir, numTokensV);
 }
 function sell_tokens(address dir, uint numTokensV) external{
     require(msg.sender == creador, "El unico con capacidad para crear tokens es el contrato QuadraticVoting");
     _burn(dir, numTokensV);
-    (bool success,) = dir.call{value:amount}("");
+    (bool success,) = dir.call{value:numTokensV * precio_token}("");
     require(success,"Error al enviar Ether.");
 
 }
