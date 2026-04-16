@@ -14,7 +14,7 @@ contract QuadraticVoting{
     }
 
     modifier creadorVotacion(){
-        require(msg.sender == owner, "Solo puede ejecutarlo el creador de la votación");
+        require(msg.sender == owner, "Solo puede ejecutarlo el creador de la votacion");
         _;
     }
 
@@ -52,6 +52,11 @@ contract QuadraticVoting{
 
     mapping(address =>bool) participantes;
 
+    modifier estaRegistrado(address user){
+        require(participantes[user]);
+        _;
+    }
+
     constructor(uint _precio_token, uint _num_max_tokens){
 
         //Llamamos al contrato con ERC20
@@ -83,7 +88,7 @@ contract QuadraticVoting{
         //mas eficiente borrar yo creo pero por ahora lo dejo asi
     }
 
-    function addProposal( string calldata titulo, string calldata descripcion,uint  presupuesto, address contrato) public returns(uint dir_contrato){
+    function addProposal( string calldata titulo, string calldata descripcion,uint  presupuesto, address contrato) external estaRegistrado(msg.sender)  returns(uint dir_contrato){
             require(IERC165(contrato).supportsInterface(0x986cc311),"El contrato no soporta la interfaz requerida"); //Comprobamos que el contrato soporta IExecutableProposal
             require(_check_id[contrato] == address(0x0), "Ya existe una propuesta asignada a ese contrato"); //Comprobación de unicidad para intentar evitar ataques DoS, aunque el atacante siempre podría crearse nuevas proposal con contratos nuevos. 
 
@@ -119,13 +124,13 @@ contract QuadraticVoting{
         //DEVOLVER TOKENS A PROPIETARIOS
     }
 
-    function buyTokens(uint numTokensC) public payable{
+    function buyTokens(uint numTokensC) external estaRegistrado(msg.sender) payable{
         //precio tokens 0?
         //directamente reenvío el dinero?
         ITokenVotacionFun(contract_ERC20).add_tokens(msg.sender, numTokensC);
     }
     
-    function sellTokens(uint numTokensV) public{
+    function sellTokens(uint numTokensV) public estaRegistrado(msg.sender) {
         //precio tokens 0?
         //directamente reenvío el dinero?
         ITokenVotacionFun(contract_ERC20).sell_tokens(msg.sender , numTokensV);  
@@ -133,17 +138,19 @@ contract QuadraticVoting{
         //enviamos dinero
     }
 
-
     function getERC20() public view returns(address){
         return contract_ERC20;
     }
+
     function getPendingProposals()public view votacionAbierta returns(uint[] memory){
         return _idsPropuestasActivas;
     }
+
     function getApprovedProposals() public view votacionAbierta returns(uint[] memory){
         return _idsPropuestasAprobadas;
 
     }
+
     function getSignalingProposals()  public view votacionAbierta returns(uint[] memory){
         return _idsPropuestasSignaling;
     }
@@ -168,9 +175,9 @@ function getProposalInfo(uint id) public view returns (
     );
 }
 
-    function stake(uint id, uint num_votos) public {
-        
-        uint num_tokens = num_votos * num_votos;
+    function stake(uint id, uint num_votos) external  estaRegistrado(msg.sender) {
+        uint ant_votos = propuestas[id].registro_votos[msg.sender];
+        uint num_tokens = (ant_votos + num_votos)**2 -ant_votos ;
         require(num_votos > 0, "No se puede votar con 0 votos"); //requisito para no consumir gas más adelante.
         require(IERC20(contract_ERC20).allowance(msg.sender,address(this)) >= num_tokens,"No se ha autorizado a transferir tantos tokens");
         IERC20(contract_ERC20).transferFrom(msg.sender, address(this), num_tokens);
@@ -189,7 +196,7 @@ function getProposalInfo(uint id) public view returns (
         require(num_votos_t >= num_votos, "Se quieren sacar mas votos de los que hay");
         
         //Cálculo del número de tokens a salir
-        uint token_salir = num_votos_t * num_votos_t - num_votos*num_votos;
+        uint token_salir =  num_votos*num_votos-(num_votos - num_votos_t)**2;
         
         //transferimos
         IERC20(contract_ERC20).transfer(msg.sender, token_salir);
@@ -215,15 +222,14 @@ function getProposalInfo(uint id) public view returns (
         //Si se cumplen las condiciones llamamos a la funcion executeProposal del contrato.
         if(threshold > propuestas[id].num_votos && propuestas[id].presupuesto_actual >= propuestas[id].presupuesto){ //comprobación requisitos.
             // Suponiendo que el Ether que quieres enviar es el presupuesto_actual
-            IExecutableProposal(propuestas[id].contrato).executeProposal{value: propuestas[id].presupuesto_actual}(
+            IExecutableProposal(propuestas[id].contrato).executeProposal{value: propuestas[id].presupuesto_actual, gas:100000}( //llamamos y fijamos como maximo 100000 de gas tal y como establece el enunciado.
                 id, propuestas[id].num_votos, propuestas[id].presupuesto_actual / precio_token
             );            
          //patron pull over push duda si lo dejo sobre id de propuesta.
 
 
             //El restante para el presupuesto total?
-            dinero_pres +=  propuestas[id].contrato.actual - propuestas[id].contrato.presupuesto;
-            
+            dinero_pres +=  propuestas[id].presupuesto_actual - propuestas[id].presupuesto;      
             //borramos de propuesta activa de forma que el array se quede de la forma mas eficiente
             uint indice_borrar = _indexPropuestasActivas[id];
             delete _indexPropuestasActivas[id];

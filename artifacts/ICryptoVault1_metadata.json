@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "accounts",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lab8/CryptoVault.sol": "ICryptoVault1"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"lab8/CryptoVault.sol": {
+			"keccak256": "0xa14d875baa4315937b6634d6f4d1f47b93d13257252e6d2e8750aa241aa87696",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5841d34c3f479964cef6353c21629b19bea6663cddff2f70f5c1347d7149397e",
+				"dweb:/ipfs/QmSxX5Wg5bGvY43aiow7n46ajz8uTX6chba1gVQeq7DVfH"
+			]
+		}
+	},
+	"version": 1
+}

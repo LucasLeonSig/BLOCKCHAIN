@@ -1,0 +1,226 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_vault",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reentryDepth",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "contractBalanceAfter",
+						"type": "uint256"
+					}
+				],
+				"name": "AttackFinished",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "investedEth",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "vaultBalanceBefore",
+						"type": "uint256"
+					}
+				],
+				"name": "AttackStarted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "depth",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "vaultBalanceNow",
+						"type": "uint256"
+					}
+				],
+				"name": "Reentry",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "GAS_BUFFER",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_DEPTH",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "attack",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "attacker",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collectProfit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "myBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "myVaultBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vault",
+				"outputs": [
+					{
+						"internalType": "contract ICryptoVault1",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vaultBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "AttackCryptoVault1",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Explota la reentrancia de CryptoVault1.withdrawAll(). ── Por qué funciona ──────────────────────────────────────────────────  withdrawAll() hace:    1. (bool sent,) = msg.sender.call{value:amount}(\"\")   ← EVM pausa aquí    2. accounts[msg.sender] = 0                           ← esto aún NO ejecutó  Durante la pausa en (1), la EVM ejecuta receive() de este contrato.  Como (2) todavía no corrió, accounts[address(this)] sigue siendo > 0.  Llamamos de nuevo a withdrawAll() → se repite hasta agotar el vault. ── Parámetros críticos ───────────────────────────────────────────────  MAX_DEPTH  = 10      reentradas máximas (evita stack overflow)  GAS_BUFFER = 100_000 gas mínimo antes de reentrar (evita OOG revert) ── Instrucciones Remix ───────────────────────────────────────────────  REQUISITO PREVIO: desplegar CryptoVault1 SIN \"import hardhat/console.sol\"  (el import de hardhat añade overhead que agota el gas del call y revierte)  1. Entorno      → Remix VM (Cancun)  2. Gas limit    → cambiar a 3_000_000 en el panel Deploy & Run  3. Account 0    → deploy CryptoVault1(50)  4. Account 1    → deposit() con value = 10 ETH  5. Account 2    → deploy AttackCryptoVault1(<addr_vault>)  6. Account 2    → attack() con value = 1 ETH  ← gas limit 3_000_000  7. Comprobar    → myBalance() > 1 ETH  8. Account 2    → collectProfit() para transferir ganancias",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lab8/CryptoVault.sol": "AttackCryptoVault1"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"lab8/CryptoVault.sol": {
+			"keccak256": "0xa14d875baa4315937b6634d6f4d1f47b93d13257252e6d2e8750aa241aa87696",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5841d34c3f479964cef6353c21629b19bea6663cddff2f70f5c1347d7149397e",
+				"dweb:/ipfs/QmSxX5Wg5bGvY43aiow7n46ajz8uTX6chba1gVQeq7DVfH"
+			]
+		}
+	},
+	"version": 1
+}

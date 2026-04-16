@@ -90,6 +90,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "closeVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getApprovedProposals",
 				"outputs": [
 					{
@@ -360,11 +367,11 @@
 			]
 		},
 		"proyecto/QuadraticVoting.sol": {
-			"keccak256": "0x0a69f6b01e06836eabcc9143c4cc75c96cd7833f9aafc12235a6f099ff851590",
+			"keccak256": "0x89bf8c5bb1204a9bc5bbc9479e05037bfa9987c844c0ed6ca0adbf02115bf393",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9d7c05a581caebb9dcd84ac3869255fad0fcd5e001e114d14a58a6cbf2debc9f",
-				"dweb:/ipfs/QmQTM4b7XBL9Mv2iEda1oxYeyrDt34YTkLRtX8cUhvEuJL"
+				"bzz-raw://52d77f0c2243963c66c8af9d0514410d01c64344e00d0202be581412d5b81e7b",
+				"dweb:/ipfs/QmZ1Z28MuzDTM2DKeXv1hHtQA6Z5AFduZayXdZCQX6WXwX"
 			]
 		},
 		"proyecto/TokenVotacion.sol": {
