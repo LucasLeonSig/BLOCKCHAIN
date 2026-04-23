@@ -182,7 +182,7 @@
 				],
 				"name": "add_tokens",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -236,6 +236,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "num_tokens",
+						"type": "uint256"
+					}
+				],
+				"name": "aprobar",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "account",
 						"type": "address"
@@ -250,6 +263,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "numTokensV",
+						"type": "uint256"
+					}
+				],
+				"name": "burn_tokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -516,8 +542,7 @@
 			"enabled": true,
 			"runs": 200
 		},
-		"remappings": [],
-		"viaIR": true
+		"remappings": []
 	},
 	"sources": {
 		"@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
@@ -561,11 +586,11 @@
 			]
 		},
 		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0x6bc2406f60cffbf3de2166caf448b8f99b375f467e5a5638b60a30e8666e7d9e",
+			"keccak256": "0x7a2e921a8fea61b80b5155e51481b363fe080bcdb2af3554f1ca001f62bf13e6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://509e2d266e185922f01f522822c392f58eeffe23ff95f8ec492f640370b390cd",
-				"dweb:/ipfs/QmXRFziCjdCF5KrxXYdYb6JAut5oPZ1PerZrr3auadooJC"
+				"bzz-raw://e8702fdb97f2a9c9dc07ff2787edabe625af3eb3e09c2de92dc45350d804d2fd",
+				"dweb:/ipfs/Qmba1etnAPD1v6ugZ7vuKozD7cidviZrUP9BzEpa4u8iR8"
 			]
 		}
 	},

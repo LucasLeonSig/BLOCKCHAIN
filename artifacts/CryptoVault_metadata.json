@@ -1,12 +1,17 @@
 {
 	"compiler": {
-		"version": "0.8.32+commit.ebbd65e5"
+		"version": "0.6.3+commit.8dda9521"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
 				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_vaultLib",
+						"type": "address"
+					},
 					{
 						"internalType": "uint8",
 						"name": "_prcFee",
@@ -15,6 +20,10 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
 			},
 			{
 				"inputs": [
@@ -33,32 +42,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					}
-				],
-				"name": "balanceOf",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "collectFees",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -113,24 +96,24 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
-			"kind": "dev",
-			"methods": {},
-			"version": 1
+			"methods": {}
 		},
 		"userdoc": {
-			"kind": "user",
-			"methods": {},
-			"version": 1
+			"methods": {}
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"lab9/valutAddress.sol": "CryptoVault1"
+			"lab9/CryptoVault.sol": "CryptoVault"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -142,20 +125,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"hardhat/console.sol": {
-			"keccak256": "0x7434453e6d3b7d0e5d0eb7846ffdbc27f0ccf3b163591263739b628074dc103a",
-			"license": "MIT",
+		"lab9/CryptoVault.sol": {
+			"keccak256": "0xfa707587af47d3cc6890a8ab436f72a44f692997e00c1e9b644a2f1168241edf",
 			"urls": [
-				"bzz-raw://49355f780520494d1d5a0f01858385e51bb5280ce0ecfb960f16995065dca395",
-				"dweb:/ipfs/QmSwJ6C5QLz6xKeQZS8wbwjU1KxRFTYfwbGmtzisd5sRW4"
-			]
-		},
-		"lab9/valutAddress.sol": {
-			"keccak256": "0x34662b9961b30878003a79351b03383b0ac0fc80949a3f1a470260d5c3458ff1",
-			"license": "GPL-3.0",
-			"urls": [
-				"bzz-raw://5c5fd0797994f75a8aeac97c60e7e23699984f367d4ecb0e3de6f389b0c87305",
-				"dweb:/ipfs/Qme4L33iUtGVoDejctB7VxzsHFNyVqwg5i7kaxZrMXjTby"
+				"bzz-raw://5f9c90f0c8efc7ed634418c8943be3beba386cfb3aca0a888a4e2a145f2a0924",
+				"dweb:/ipfs/QmSHCkmQtFTzojNjSprBPtmZboQBfuYaXEhYBGbYjNgf25"
 			]
 		}
 	},

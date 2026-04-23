@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.26; 
-
 import "hardhat/console.sol";
 
 /*
@@ -39,7 +38,6 @@ contract CryptoVault1 {
     function deposit() external payable{
         require (msg.value >= 100, "Insufficient deposit");
         uint fee = msg.value * prcFee / 10000; // two decimal digits
-        console.log(fee);
         accounts[msg.sender] += msg.value - fee;
         collectedFees += fee;
     }

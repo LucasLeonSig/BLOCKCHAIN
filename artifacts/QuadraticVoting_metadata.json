@@ -96,6 +96,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "extraerTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getApprovedProposals",
 				"outputs": [
@@ -282,8 +295,7 @@
 			"enabled": true,
 			"runs": 200
 		},
-		"remappings": [],
-		"viaIR": true
+		"remappings": []
 	},
 	"sources": {
 		"@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
@@ -367,19 +379,19 @@
 			]
 		},
 		"proyecto/QuadraticVoting.sol": {
-			"keccak256": "0x5f597b8ec6d261a114e929ecf55ac0dc0d5e5438eb45bde5c8a824f16688fb5d",
+			"keccak256": "0x0ea97a2df3b1299dbdac99674fb68fcd20776436f64b896793a11fcd45503dee",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2c2f64aeab97a5267fa53aacc09dcd77914a56ca37ea795b94ed87a62aeb5dd2",
-				"dweb:/ipfs/QmcAQkhmubCu8hxbuDwFcqHpUmu1hB4da5gPjsoBdVMfGA"
+				"bzz-raw://aaa4a69987d3f2357aabf450110a4de679686e6f995c907d498d1b2108ad1695",
+				"dweb:/ipfs/QmS1qevEgAfXgRGFheEtNwDnsS6CQmrsKeroCnqXYBadqf"
 			]
 		},
 		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0x6bc2406f60cffbf3de2166caf448b8f99b375f467e5a5638b60a30e8666e7d9e",
+			"keccak256": "0xd443d68b00e8b2ddc89e27d6854e49d26ed9235df4b1f3627fce8062e30d8351",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://509e2d266e185922f01f522822c392f58eeffe23ff95f8ec492f640370b390cd",
-				"dweb:/ipfs/QmXRFziCjdCF5KrxXYdYb6JAut5oPZ1PerZrr3auadooJC"
+				"bzz-raw://7ae6ada9ed105c06038edf0a6d443b171c94c2aa266780231cbb7b82aab02011",
+				"dweb:/ipfs/QmYDxwni65QGdPTYpKjJBE6wh94wMn17U1d3HopnAzZ15m"
 			]
 		}
 	},
