@@ -379,19 +379,19 @@
 			]
 		},
 		"proyecto/QuadraticVoting.sol": {
-			"keccak256": "0x0ea97a2df3b1299dbdac99674fb68fcd20776436f64b896793a11fcd45503dee",
+			"keccak256": "0x92451cd9ddca0b4ffda7a550d3d9bcf6436dfdac9374809bdea8ac3f6854252f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://aaa4a69987d3f2357aabf450110a4de679686e6f995c907d498d1b2108ad1695",
-				"dweb:/ipfs/QmS1qevEgAfXgRGFheEtNwDnsS6CQmrsKeroCnqXYBadqf"
+				"bzz-raw://01ef56729dea38fb4c376943e7f55d18057e24b16304a4e469649bf491056788",
+				"dweb:/ipfs/QmRKpEAouoZvVYRvg2rCxom2hbv6nLLiDe3iZC43EUQ6bK"
 			]
 		},
 		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0xd443d68b00e8b2ddc89e27d6854e49d26ed9235df4b1f3627fce8062e30d8351",
+			"keccak256": "0x9cd4694d7c46e70d6a54d8ec92fcb2ad7e707dad6bf744fa2a6b4de6de7b9c96",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7ae6ada9ed105c06038edf0a6d443b171c94c2aa266780231cbb7b82aab02011",
-				"dweb:/ipfs/QmYDxwni65QGdPTYpKjJBE6wh94wMn17U1d3HopnAzZ15m"
+				"bzz-raw://a00a175790e2d04bc0f78b3f43db2a133d96689643662b8e76bc170b9947ba80",
+				"dweb:/ipfs/QmWqjuAn6mZMka55ED1JMSSUnqXhKhboMP68RL74KEF99x"
 			]
 		}
 	},

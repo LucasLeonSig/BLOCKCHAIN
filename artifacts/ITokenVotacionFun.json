@@ -38,7 +38,8 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"add_tokens(address,uint256)": "b556861a",
-			"burn_tokens(uint256)": "3d6c1c1f",
+			"burn_tokens(address,uint256)": "9a2b8565",
+			"disponibles_a_ceder(address,uint256)": "b66bf9db",
 			"sell_tokens(address,uint256)": "d450d0f9"
 		}
 	},
@@ -64,6 +65,11 @@
 		{
 			"inputs": [
 				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
 					"internalType": "uint256",
 					"name": "numTokensV",
 					"type": "uint256"
@@ -72,6 +78,30 @@
 			"name": "burn_tokens",
 			"outputs": [],
 			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "num_tokens",
+					"type": "uint256"
+				}
+			],
+			"name": "disponibles_a_ceder",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
 			"type": "function"
 		},
 		{

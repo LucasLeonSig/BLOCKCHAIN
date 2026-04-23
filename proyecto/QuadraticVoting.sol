@@ -146,13 +146,22 @@ contract QuadraticVoting{
     function cancelProposal(uint id) public votacionAbierta{
        
         require(propuestas[id].creador_propuesta == msg.sender , "Solo puede eliminar una propuesta su creador");
-        require(propuestas[id].estado != tEstado.APROBADO && propuestas[id].ronda == ronda, "Tratando de eliminar una Proposal indebida");
+        require(propuestas[id].estado != tEstado.APROBADO && propuestas[id].ronda == ronda &&propuestas[id].estado != tEstado.CANCELADO , "Tratando de eliminar una Proposal indebida");
         propuestas[id].estado = tEstado.CANCELADO;
+
         //LOGICA ELIMINAR ELEMENTOS DE LA LISTA DE ACTIVAS
         uint indice_borrar = propuestas[id].indice;
+        if(propuestas[id].estado == tEstado.ABIERTA){
         _idsPropuestasActivas[indice_borrar] = _idsPropuestasActivas[_idsPropuestasActivas.length -1];
         propuestas[_idsPropuestasActivas[indice_borrar]].indice = indice_borrar;
         _idsPropuestasActivas.pop();
+        }else{
+        _idsPropuestasSignaling[indice_borrar] = _idsPropuestasSignaling[_idsPropuestasActivas.length -1];
+        propuestas[_idsPropuestasSignaling[indice_borrar]].indice = indice_borrar;
+        _idsPropuestasSignaling.pop();
+
+        }
+
         //PATRON PULL OVER PUSH PARA DEVOLVER TOKENS         
     }
 
@@ -165,6 +174,7 @@ contract QuadraticVoting{
     
     function sellTokens(uint numTokensV) public usuarioRegistrado {
 
+        require(ITokenVotacionFun(contract_ERC20).disponibles_a_ceder(msg.sender, numTokensV));
         ITokenVotacionFun(contract_ERC20).sell_tokens(msg.sender , numTokensV);
         (bool success, ) = msg.sender.call{value: numTokensV * precio_token}("");
         require(success, "Error en la transferencia de Ether");        //si me da error porque no tiene esos tokens?
@@ -250,8 +260,7 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
         //Cálculo umbral
         uint cociente = (propuestas[id].presupuesto * 100) / dinero_pres;
         uint factor_paren = 20 + cociente;
-        uint threshold = (factor_paren * num_participantes)/100 + _idsPropuestasActivas.length;
-
+        uint threshold = (20 * num_participantes +  (propuestas[id].presupuesto * 100 * num_participantes) / dinero_pres) / 100 + _idsPropuestasActivas.length;
         //Si se cumplen las condiciones llamamos a la funcion executeProposal del contrato.
         if(threshold < propuestas[id].num_votos && propuestas[id].presupuesto_actual >= propuestas[id].presupuesto){ //comprobación requisitos.
 
@@ -275,7 +284,7 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
                 id, propuestas[id].num_votos, propuestas[id].presupuesto_actual / precio_token
             );     
 
-            ITokenVotacionFun(contract_ERC20).burn_tokens(propuestas[id].num_votos ** 2) ;
+            ITokenVotacionFun(contract_ERC20).burn_tokens(address(this),propuestas[id].num_votos ** 2) ;
      
         }
     }

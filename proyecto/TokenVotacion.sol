@@ -10,7 +10,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 interface ITokenVotacionFun {
     function add_tokens(address dir,uint numTokensV) external;
     function sell_tokens(address dir, uint numTokensV) external;
-    function burn_tokens(uint numTokensV) external;
+function burn_tokens(address from, uint numTokensV) external ;
+function disponibles_a_ceder(address user, uint num_tokens)  external view returns(bool);
 }
 
 
@@ -46,12 +47,17 @@ function sell_tokens(address dir, uint numTokensV) external esCreador{
     _burn(dir, numTokensV); 
 }
 
-function burn_tokens(uint numTokensV) external esCreador {
-        _burn(msg.sender, numTokensV); 
+function burn_tokens(address from, uint numTokensV) external esCreador {
+        _burn(from, numTokensV); 
     }
 
-function aprobar(uint num_tokens) external{
-    require(balanceOf(msg.sender) >= num_tokens); //comprobamos que intenta aprobar una cantidad de tokens menor a la que tiene
-    _approve(msg.sender, creador, num_tokens);
+function aprobar(uint num_tokens2) external{
+    require(balanceOf(msg.sender) >= num_tokens2); //comprobamos que intenta aprobar una cantidad de tokens menor a la que tiene
+    _approve(msg.sender, creador, num_tokens2);
 }
+function disponibles_a_ceder(address user, uint num_tokens2) esCreador external view returns(bool){
+    //si bajo compilación comprobar underflow
+    return !(balanceOf(msg.sender) < allowance(user, creador) + num_tokens2);
+}
+
 }
