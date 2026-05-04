@@ -22,6 +22,275 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "participante",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "mantieneConteoPorVotosActivos",
+						"type": "bool"
+					}
+				],
+				"name": "ParticipantRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "creador",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "contrato",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "presupuesto",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "votos",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "presupuesto",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokensConsumidos",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalApproved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "votos",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokens",
+						"type": "uint256"
+					}
+				],
+				"name": "SignalingExecuted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "participante",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokensComprados",
+						"type": "uint256"
+					}
+				],
+				"name": "TokensAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "votante",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokens",
+						"type": "uint256"
+					}
+				],
+				"name": "TokensExtracted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "votante",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "votos",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokens",
+						"type": "uint256"
+					}
+				],
+				"name": "Voted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "votante",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "votos",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokens",
+						"type": "uint256"
+					}
+				],
+				"name": "VotesWithdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint32",
+						"name": "rondaCerrada",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "presupuestoDevuelto",
+						"type": "uint256"
+					}
+				],
+				"name": "VotingClosed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint32",
+						"name": "ronda",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "presupuestoInicial",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "numParticipantes",
+						"type": "uint64"
+					}
+				],
+				"name": "VotingOpened",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "addParticipant",
 				"outputs": [],
@@ -41,9 +310,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "presupuesto",
-						"type": "uint256"
+						"type": "uint96"
 					},
 					{
 						"internalType": "address",
@@ -91,6 +360,19 @@
 			{
 				"inputs": [],
 				"name": "closeVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "executeSignaling",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -173,8 +455,38 @@
 						"type": "address"
 					},
 					{
+						"internalType": "address",
+						"name": "contrato",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "presupuesto",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "presupuestoActual",
+						"type": "uint256"
+					},
+					{
 						"internalType": "uint256",
 						"name": "numVotos",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numParticipantesPropuesta",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum QuadraticVoting.tEstado",
+						"name": "estado",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rondaPropuesta",
 						"type": "uint256"
 					}
 				],
@@ -284,7 +596,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"proyecto/QuadraticVoting.sol": "QuadraticVoting"
+			"proyecto2/QuadraticVoting.sol": "QuadraticVoting"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -338,14 +650,6 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"@openzeppelin/contracts/utils/Panic.sol": {
-			"keccak256": "0xf7fe324703a64fc51702311dc51562d5cb1497734f074e4f483bfb6717572d7a",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://c6a5ff4f9fd8649b7ee20800b7fa387d3465bd77cf20c2d1068cd5c98e1ed57a",
-				"dweb:/ipfs/QmVSaVJf9FXFhdYEYeCEfjMVHrxDh5qL4CGkxdMWpQCrqG"
-			]
-		},
 		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
 			"keccak256": "0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c",
 			"license": "MIT",
@@ -354,44 +658,28 @@
 				"dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u"
 			]
 		},
-		"@openzeppelin/contracts/utils/math/Math.sol": {
-			"keccak256": "0x59973a93b1f983f94e10529f46ca46544a9fec2b5f56fb1390bbe9e0dc79f857",
+		"proyecto2/IExecutableProposal.sol": {
+			"keccak256": "0xa68b1d49e6203871bc08b1376d57368f9c373edefe1ede2e8c50d45ab1437b94",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c55ef8f0b9719790c2ae6f81d80a59ffb89f2f0abe6bc065585bd79edce058c5",
-				"dweb:/ipfs/QmNNmCbX9NjPXKqHJN8R1WC2rNeZSQrPZLd6FF6AKLyH5Y"
+				"bzz-raw://9e3ec3b51dba9d905a8710cf0df951c88fbce949344d058ce5524104c54cd8a2",
+				"dweb:/ipfs/QmdHDmRYMDDyZSyy5dymres3UmjADkuVCSMHmQLmahc1c1"
 			]
 		},
-		"@openzeppelin/contracts/utils/math/SafeCast.sol": {
-			"keccak256": "0xc8cae21c9ae4a46e5162ff9bf5b351d6fa6a6eba72d515f3bc1bdfeda7fdf083",
+		"proyecto2/QuadraticVoting.sol": {
+			"keccak256": "0x6e1f4d710e2605d5fbc37173a241bc3f97e9bf70eaff51491b1298f291bf6837",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ce830ebcf28e31643caba318996db3763c36d52cd0f23798ba83c135355d45e9",
-				"dweb:/ipfs/QmdGPcvptHN7UBCbUYBbRX3hiRVRFLRwno8b4uga6uFNif"
+				"bzz-raw://8905d087c3d8a855b58bd85170c98680689e4e581502ca8d361f8161552c61e8",
+				"dweb:/ipfs/QmTqTeigwsSEfFEcuLi5ezXbsm6YE4zkKnCwTiuoqTjLgv"
 			]
 		},
-		"proyecto/IExecutableProposal.sol": {
-			"keccak256": "0xd51a02dcac31c99ba8ac0c639d8512cd0ba2ef44b43ea78672a604f31f3144bb",
+		"proyecto2/TokenVotacion.sol": {
+			"keccak256": "0x6a3a63642ea34f253a573c94311223dec537f170b564814ab7d2cbf42cf75a05",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c6f1aadb72ee8c7fbf2cb12893cd741e43861e8ca933e1006dbac7e352e8880d",
-				"dweb:/ipfs/QmaUvo8oUU6oCsaJVqo9manaKVzBYr2xXbns4nZBbbWGwd"
-			]
-		},
-		"proyecto/QuadraticVoting.sol": {
-			"keccak256": "0x92451cd9ddca0b4ffda7a550d3d9bcf6436dfdac9374809bdea8ac3f6854252f",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://01ef56729dea38fb4c376943e7f55d18057e24b16304a4e469649bf491056788",
-				"dweb:/ipfs/QmRKpEAouoZvVYRvg2rCxom2hbv6nLLiDe3iZC43EUQ6bK"
-			]
-		},
-		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0x9cd4694d7c46e70d6a54d8ec92fcb2ad7e707dad6bf744fa2a6b4de6de7b9c96",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://a00a175790e2d04bc0f78b3f43db2a133d96689643662b8e76bc170b9947ba80",
-				"dweb:/ipfs/QmWqjuAn6mZMka55ED1JMSSUnqXhKhboMP68RL74KEF99x"
+				"bzz-raw://1a8a56e3a5b20ce3c5767da58fa842f003442ac392dcb419c7bca65b31e49d56",
+				"dweb:/ipfs/QmVbv9A7WHgXYy3fFQpDrSgxrpwwV27pvwRX24TAF8aF77"
 			]
 		}
 	},

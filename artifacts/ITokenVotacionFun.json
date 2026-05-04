@@ -38,7 +38,6 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"add_tokens(address,uint256)": "b556861a",
-			"burn_tokens(address,uint256)": "9a2b8565",
 			"disponibles_a_ceder(address,uint256)": "b66bf9db",
 			"sell_tokens(address,uint256)": "d450d0f9"
 		}
@@ -58,24 +57,6 @@
 				}
 			],
 			"name": "add_tokens",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "address",
-					"name": "from",
-					"type": "address"
-				},
-				{
-					"internalType": "uint256",
-					"name": "numTokensV",
-					"type": "uint256"
-				}
-			],
-			"name": "burn_tokens",
 			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"

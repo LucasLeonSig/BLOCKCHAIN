@@ -27,11 +27,34 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[ERC section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
@@ -42,7 +65,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"proyecto/IExecutableProposal.sol": "IExecutableProposal"
+			"proyecto2/IExecutableProposal.sol": "IExecutableProposal"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -53,16 +76,23 @@
 			"enabled": true,
 			"runs": 200
 		},
-		"remappings": [],
-		"viaIR": true
+		"remappings": []
 	},
 	"sources": {
-		"proyecto/IExecutableProposal.sol": {
-			"keccak256": "0xd51a02dcac31c99ba8ac0c639d8512cd0ba2ef44b43ea78672a604f31f3144bb",
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c6f1aadb72ee8c7fbf2cb12893cd741e43861e8ca933e1006dbac7e352e8880d",
-				"dweb:/ipfs/QmaUvo8oUU6oCsaJVqo9manaKVzBYr2xXbns4nZBbbWGwd"
+				"bzz-raw://971f954442df5c2ef5b5ebf1eb245d7105d9fbacc7386ee5c796df1d45b21617",
+				"dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u"
+			]
+		},
+		"proyecto2/IExecutableProposal.sol": {
+			"keccak256": "0xa68b1d49e6203871bc08b1376d57368f9c373edefe1ede2e8c50d45ab1437b94",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9e3ec3b51dba9d905a8710cf0df951c88fbce949344d058ce5524104c54cd8a2",
+				"dweb:/ipfs/QmdHDmRYMDDyZSyy5dymres3UmjADkuVCSMHmQLmahc1c1"
 			]
 		}
 	},

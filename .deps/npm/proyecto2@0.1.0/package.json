@@ -1,0 +1,30 @@
+{
+  "name": "proyecto2",
+  "version": "0.1.0",
+  "description": "Traductor de idioma platzom",
+  "main": "dist/src/platzom.js",
+  "scripts": {
+    "build": "babel src/platzom.js -d dist",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jusebastian/proyecto.git"
+  },
+  "keywords": [
+    "Javacript",
+    "Platzom"
+  ],
+  "author": "Juan Ramirez <jusebastian13@gmail.com\"> (https://www.facebook.com/tathan.ramirez)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jusebastian/proyecto/issues"
+  },
+  "homepage": "https://github.com/jusebastian/proyecto#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}

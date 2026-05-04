@@ -27,24 +27,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "numTokensV",
-						"type": "uint256"
-					}
-				],
-				"name": "burn_tokens",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "user",
 						"type": "address"
 					},
@@ -97,7 +79,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"proyecto/TokenVotacion.sol": "ITokenVotacionFun"
+			"proyecto2/TokenVotacion.sol": "ITokenVotacionFun"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -151,12 +133,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"proyecto/TokenVotacion.sol": {
-			"keccak256": "0x9cd4694d7c46e70d6a54d8ec92fcb2ad7e707dad6bf744fa2a6b4de6de7b9c96",
+		"proyecto2/TokenVotacion.sol": {
+			"keccak256": "0x2bb79c3ee8ed2012760ece5bf211c17ec9e24b62f145bb23576f156e5aa127c2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a00a175790e2d04bc0f78b3f43db2a133d96689643662b8e76bc170b9947ba80",
-				"dweb:/ipfs/QmWqjuAn6mZMka55ED1JMSSUnqXhKhboMP68RL74KEF99x"
+				"bzz-raw://9f766aae13aec43b0f1b1333f8ce3cef2bb6b645dd109052fa87333121b26108",
+				"dweb:/ipfs/Qma6UfA3CSYamEiMWKdsMzL3rzTz1gPzzVt1frsAU6CUpv"
 			]
 		}
 	},

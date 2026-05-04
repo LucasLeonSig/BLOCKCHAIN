@@ -32,46 +32,65 @@ contract QuadraticVoting{
 
     //DATOS
 
-    enum tEstado{
-        ABIERTA, 
-        CANCELADO,
-        APROBADO,
-        SIGNALING
-    }
-    
-    struct sPropuesta{
-        bool extraible;
-        uint presupuesto;
-        uint presupuesto_actual;
-        uint num_votos;
-        string titulo;
-        string descripcion;
-        address contrato; 
-        address creador_propuesta;
-        uint num_participantes;
-        uint ronda;
-        uint indice;
-        tEstado estado;
-        mapping(address => uint) registro_votos;
+enum tEstado {
+    ABIERTA,
+    CANCELADO,
+    APROBADO,
+    SIGNALING
+}
 
-    }
+struct sPropuesta {
+    // Slot 1: 20 + 1 + 1 + 1 + 4 + 4 = 31 bytes
+    address creador_propuesta;
+    tEstado estado;
+    bool exec;
+    bool extraible;
+    uint32 ronda;
+    uint32 indice;
 
+    // Slot 2: 20 + 12 = 32 bytes
+    address contrato;
+    uint96 presupuesto;
 
+    // Slot 3: 12 + 12 + 8 = 32 bytes
+    uint96 presupuesto_actual;
+    uint96 num_votos;
+    uint64 num_participantes;
+
+    // Tipos dinámicos
+    string titulo;
+    string descripcion;
+
+    // Mapping al final
+    mapping(address => uint) registro_votos;
+}
+
+    // Slot 1: 20 + 1 = 21 bytes
     address private owner;
-    address private contract_ERC20;
     bool public isOpen;
+
+    // Slot 2: 20 bytes
+    address private contract_ERC20;
+
+    // Slots separados porque son uint grandes
     uint private num_max_tokens;
-    uint private precio_token; 
-    uint private dinero_pres; //temporal
+    uint private precio_token;
+    uint private dinero_pres; // temporal
+
+    // Puedes reducir estos si quieres optimizar más
+    uint64 private id_propuesta = 1;
+    uint64 private num_participantes;
+    uint32 private ronda;
+
+    // Arrays dinámicos
     uint[] private _idsPropuestasActivas;
     uint[] private _idsPropuestasAprobadas;
     uint[] private _idsPropuestasSignaling;
-    uint ronda; 
-    mapping(address => bool) private _check_id; //Comprobamos si el contrato ya esta asociado. NO SE SI NECESARIO.
+
+    // Mappings
+    mapping(address => bool) private _check_id; // Comprobamos si el contrato ya esta asociado. NO SE SI NECESARIO.
     mapping(uint => sPropuesta) private propuestas;
-    uint id_propuesta = 1;
-    mapping(address =>bool) participantes;
-    uint num_participantes;
+    mapping(address => bool) private participantes;
 
     constructor(uint _precio_token, uint _num_max_tokens){
 
@@ -82,6 +101,7 @@ contract QuadraticVoting{
         owner = msg.sender; //El dueño del contrato lo establecemos como quien lo crea.
         TokenVotacion tv = new TokenVotacion(0,precio_token, num_max_tokens, address(this));
         contract_ERC20 = address(tv);
+        
     }
 
     //Condicion solo ejecutar una vez?
@@ -89,7 +109,6 @@ contract QuadraticVoting{
         require(!isOpen, "La votacion ya esta abierta");
         isOpen = true; //abrimos la votación
         dinero_pres += msg.value;
-
         //Nos aseguramos de que están vacios en el caso de que se hubiera abierto antes
         delete _idsPropuestasActivas;
         delete _idsPropuestasAprobadas;
@@ -107,7 +126,6 @@ contract QuadraticVoting{
 
     }
 
-
     function removeParticipant() public usuarioRegistrado{
         participantes[msg.sender] = false;
         num_participantes -= 1;
@@ -116,9 +134,9 @@ contract QuadraticVoting{
 
     function addProposal( string calldata titulo, string calldata descripcion,uint  presupuesto, address contrato) external usuarioRegistrado votacionAbierta returns(uint dir_contrato){
             require(IERC165(contrato).supportsInterface(0x986cc311),"El contrato no soporta la interfaz requerida"); //Comprobamos que el contrato soporta IExecutableProposal
-            require(!_check_id[contrato], "Ya existe una propuesta asignada a ese contrato"); //Comprobación de unicidad para intentar evitar ataques DoS, aunque el atacante siempre podría crearse nuevas proposal con contratos nuevos. 
+            //require(!_check_id[contrato], "Ya existe una propuesta asignada a ese contrato"); //Comprobación de unicidad para intentar evitar ataques DoS, aunque el atacante siempre podría crearse nuevas proposal con contratos nuevos. 
 
-            _check_id[contrato] =true; //asignamos ya ese contrato y por ende lo ponemos a true.
+            //_check_id[contrato] =true; //asignamos ya ese contrato y por ende lo ponemos a true.
             sPropuesta storage p = propuestas[id_propuesta];   
             p.titulo = titulo;
             p.descripcion = descripcion;
@@ -127,7 +145,6 @@ contract QuadraticVoting{
             p.creador_propuesta = msg.sender;
             p.ronda = ronda;
             p.extraible = true; // No se si es necesario porque claro si lo elimino de mi mapping de addresses?
-
             
             if(presupuesto != 0){ 
                 _idsPropuestasActivas.push(id_propuesta); //si el presupuesto es distinto de 0 el contrato es de tipo financiación;
@@ -147,7 +164,6 @@ contract QuadraticVoting{
        
         require(propuestas[id].creador_propuesta == msg.sender , "Solo puede eliminar una propuesta su creador");
         require(propuestas[id].estado != tEstado.APROBADO && propuestas[id].ronda == ronda &&propuestas[id].estado != tEstado.CANCELADO , "Tratando de eliminar una Proposal indebida");
-        propuestas[id].estado = tEstado.CANCELADO;
 
         //LOGICA ELIMINAR ELEMENTOS DE LA LISTA DE ACTIVAS
         uint indice_borrar = propuestas[id].indice;
@@ -156,13 +172,13 @@ contract QuadraticVoting{
         propuestas[_idsPropuestasActivas[indice_borrar]].indice = indice_borrar;
         _idsPropuestasActivas.pop();
         }else{
-        _idsPropuestasSignaling[indice_borrar] = _idsPropuestasSignaling[_idsPropuestasActivas.length -1];
+        _idsPropuestasSignaling[indice_borrar] = _idsPropuestasSignaling[_idsPropuestasSignaling.length -1];
         propuestas[_idsPropuestasSignaling[indice_borrar]].indice = indice_borrar;
         _idsPropuestasSignaling.pop();
-
         }
+        propuestas[id].estado = tEstado.CANCELADO; //ponemos estado en cancelado importante.
+        //PATRON PULL OVER PUSH PARA DEVOLVER TOKENS  
 
-        //PATRON PULL OVER PUSH PARA DEVOLVER TOKENS         
     }
 
     function buyTokens(uint numTokensC) public usuarioRegistrado payable{
@@ -206,6 +222,7 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
     address creador, 
     uint numVotos
 ) {
+    //implementar ronda condicion 
     sPropuesta storage p = propuestas[id];   
 
     return (
@@ -216,8 +233,8 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
     );
 }
 
-    function stake(uint id, uint num_votos) external  usuarioRegistrado existenciaId(id) {
-        require(propuestas[id].estado == tEstado.ABIERTA && propuestas[id].ronda == ronda); //Comprobamos que la propuesta es votable.
+    function stake(uint id, uint num_votos) external  usuarioRegistrado votacionAbierta existenciaId(id) {
+        require((propuestas[id].estado == tEstado.ABIERTA || propuestas[id].estado == tEstado.SIGNALING) && propuestas[id].ronda == ronda); //Comprobamos que la propuesta es votable.
         
         uint ant_votos = propuestas[id].registro_votos[msg.sender];
         uint num_tokens = (ant_votos + num_votos)**2 - ant_votos**2; //cuidado sobrepasar 
@@ -234,7 +251,7 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
     }
 
     function withdrawFromProposal(uint num_votos, uint id) external existenciaId(id) usuarioRegistrado votacionAbierta{ 
-        require(propuestas[id].estado != tEstado.APROBADO && propuestas[id].estado != tEstado.SIGNALING);
+        require(propuestas[id].estado != tEstado.APROBADO && propuestas[id].estado != tEstado.CANCELADO);
         uint num_votos_t = propuestas[id].registro_votos[msg.sender] ;
         require(num_votos_t >= num_votos, "Se quieren sacar mas votos de los que hay");
         
@@ -245,28 +262,26 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
         propuestas[id].num_votos -= num_votos;
         propuestas[id].registro_votos[msg.sender] -= num_votos;
        
+  
+        if(propuestas[id].registro_votos[msg.sender] == 0) propuestas[id].num_participantes -=1; //si el participante se queda con 0 votos, no se considera participante.
+        propuestas[id].presupuesto_actual -= token_salir * precio_token; //quitamos del presupuesto actual los tokens que van a salir.
         //transferimos
         IERC20(contract_ERC20).transfer(msg.sender, token_salir);   
 
-        if(propuestas[id].registro_votos[msg.sender] == 0) propuestas[id].num_participantes -=1; //si el participante se queda con 0 votos, no se considera participante.
-        propuestas[id].presupuesto_actual -= token_salir * precio_token; //quitamos del presupuesto actual los tokens que van a salir.
 
     }
 
     function _checkAndExecuteProposal(uint id)  internal {
 
         if(propuestas[id].presupuesto == 0)  return; //Propuestas signaling
-
+        require(dinero_pres > 0); //evitamos division entre cero
         //Cálculo umbral
-        uint cociente = (propuestas[id].presupuesto * 100) / dinero_pres;
-        uint factor_paren = 20 + cociente;
         uint threshold = (20 * num_participantes +  (propuestas[id].presupuesto * 100 * num_participantes) / dinero_pres) / 100 + _idsPropuestasActivas.length;
+        
         //Si se cumplen las condiciones llamamos a la funcion executeProposal del contrato.
-        if(threshold < propuestas[id].num_votos && propuestas[id].presupuesto_actual >= propuestas[id].presupuesto){ //comprobación requisitos.
-
+        if(threshold < propuestas[id].num_votos && dinero_pres >= propuestas[id].presupuesto){
             //El restante para el presupuesto total?
             dinero_pres +=  propuestas[id].presupuesto_actual - propuestas[id].presupuesto;      
-            
             //borramos de propuesta activa de forma que el array se quede de la forma mas eficiente
             uint indice_borrar = propuestas[id].indice;
             _idsPropuestasActivas[indice_borrar] = _idsPropuestasActivas[_idsPropuestasActivas.length -1];
@@ -278,14 +293,13 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
             propuestas[id].indice = _idsPropuestasAprobadas.length-1;
             propuestas[id].estado = tEstado.APROBADO;
 
+            ITokenVotacionFun(contract_ERC20).sell_tokens(address(this), propuestas[id].presupuesto_actual / precio_token);     
 
             // Suponiendo que el Ether que quieres enviar es el presupuesto_actual
-            IExecutableProposal(propuestas[id].contrato).executeProposal{value: propuestas[id].presupuesto_actual, gas:100000}( //llamamos y fijamos como maximo 100000 de gas tal y como establece el enunciado.
+            IExecutableProposal(propuestas[id].contrato).executeProposal{value: propuestas[id].presupuesto, gas:100000}( //llamamos y fijamos como maximo 100000 de gas tal y como establece el enunciado.
                 id, propuestas[id].num_votos, propuestas[id].presupuesto_actual / precio_token
             );     
 
-            ITokenVotacionFun(contract_ERC20).burn_tokens(address(this),propuestas[id].num_votos ** 2) ;
-     
         }
     }
 
@@ -295,6 +309,10 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
         //Cerramos la votación.
         isOpen = false;
         ronda +=1; //añadimos ronda para la siguiente vez que se abra.
+        uint dinero_devolver= dinero_pres;
+        dinero_pres = 0;
+        (bool success, ) = owner.call{value:dinero_devolver}("");
+        require(success);
     }
 
     //funcion de pull over push
@@ -305,5 +323,14 @@ function getProposalInfo(uint id) public view votacionAbierta existenciaId(id) r
         propuestas[id].num_votos -= votos;
         propuestas[id].registro_votos[msg.sender] = 0;
         IERC20(contract_ERC20).transfer(msg.sender,votos**2);
+        propuestas[id].presupuesto_actual -= votos ** 2 * precio_token; //Necesario? si ya esta cancelado que más da no?
     }
+
+    function executeSignaling(uint id) external creadorVotacion {
+        require(propuestas[id].estado == tEstado.SIGNALING && propuestas[id].ronda < ronda && !propuestas[id].exec);
+        propuestas[id].exec = true;
+        IExecutableProposal(propuestas[id].contrato).executeProposal{value:0, gas:10000}(id,propuestas[id].num_votos,0);
+    }
+
 }
+

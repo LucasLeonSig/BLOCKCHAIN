@@ -37,7 +37,8 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"executeProposal(uint256,uint256,uint256)": "986cc311"
+			"executeProposal(uint256,uint256,uint256)": "986cc311",
+			"supportsInterface(bytes4)": "01ffc9a7"
 		}
 	},
 	"abi": [
@@ -62,6 +63,25 @@
 			"name": "executeProposal",
 			"outputs": [],
 			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes4",
+					"name": "interfaceId",
+					"type": "bytes4"
+				}
+			],
+			"name": "supportsInterface",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
 			"type": "function"
 		}
 	]

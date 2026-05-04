@@ -5,9 +5,8 @@ import "./IExecutableProposal.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
 event PagoRecibido(address pagador, uint256 cantidad); //declaramos un evento para comprobar que efectivamente si que ha llegado el dinero.
 event ConfirmacionDatos(uint proposalId, uint numVotes, uint numTokens);
-contract ContratoAux is IExecutableProposal, ERC165 {
+contract ContratoAux is IExecutableProposal {
     
-    // Implementas la función de tu interfaz
     function executeProposal(
         uint proposalId, 
         uint numVotes, 
@@ -20,7 +19,7 @@ contract ContratoAux is IExecutableProposal, ERC165 {
 
     function supportsInterface(bytes4 interfaceId) public pure override returns (bool) {
         return 
-            interfaceId == type(IExecutableProposal).interfaceId;
-    }
+        interfaceId == type(IExecutableProposal).interfaceId ||
+        interfaceId == type(IERC165).interfaceId;    }
 
 }

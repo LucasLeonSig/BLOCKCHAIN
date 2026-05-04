@@ -109,7 +109,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"proyecto/ContratoAux.sol": "ContratoAux"
+			"proyecto2/ContratoAux.sol": "ContratoAux"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -120,8 +120,7 @@
 			"enabled": true,
 			"runs": 200
 		},
-		"remappings": [],
-		"viaIR": true
+		"remappings": []
 	},
 	"sources": {
 		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
@@ -140,20 +139,20 @@
 				"dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u"
 			]
 		},
-		"proyecto/ContratoAux.sol": {
-			"keccak256": "0xa69f36d4f930d69fef81f4a10fc01ef702f4beb1dca8c4ca8639d2903c8ff777",
+		"proyecto2/ContratoAux.sol": {
+			"keccak256": "0xadd754249fb9041920243f9ad90e17d3d73553f41bf9a4f001dfdc57e7a4cc74",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0180e74b239ca37536898aacd56d4300319d4bf69077eb65774cad1b8298a821",
-				"dweb:/ipfs/QmfCCFFxPJ8k16YcGXJeq9WP3LEGmuJotKriRdi1DrwVkr"
+				"bzz-raw://76a7f5cc89202abdae04e217d1690a8df780035aaa45f44845b28cd308dcf928",
+				"dweb:/ipfs/QmPApY1zsFkEXRVoVKGca6er1ZEMGecxk2DZ46Y272ETGL"
 			]
 		},
-		"proyecto/IExecutableProposal.sol": {
-			"keccak256": "0xd51a02dcac31c99ba8ac0c639d8512cd0ba2ef44b43ea78672a604f31f3144bb",
+		"proyecto2/IExecutableProposal.sol": {
+			"keccak256": "0xa68b1d49e6203871bc08b1376d57368f9c373edefe1ede2e8c50d45ab1437b94",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c6f1aadb72ee8c7fbf2cb12893cd741e43861e8ca933e1006dbac7e352e8880d",
-				"dweb:/ipfs/QmaUvo8oUU6oCsaJVqo9manaKVzBYr2xXbns4nZBbbWGwd"
+				"bzz-raw://9e3ec3b51dba9d905a8710cf0df951c88fbce949344d058ce5524104c54cd8a2",
+				"dweb:/ipfs/QmdHDmRYMDDyZSyy5dymres3UmjADkuVCSMHmQLmahc1c1"
 			]
 		}
 	},
